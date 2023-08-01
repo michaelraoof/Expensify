@@ -95,7 +95,11 @@ Onyx.connect({
         currentUserAccountID = val.accountID;
     },
 });
-
+let privatePersonalDetails;
+Onyx.connect({
+  key: ONYXKEYS.PRIVATE_PERSONAL_DETAILS,
+  callback: (val) => (privatePersonalDetails = val),
+});
 /**
  * Shows a welcome action on first login
  *
